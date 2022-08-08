@@ -14,8 +14,9 @@ pipeline {
     }
     stage('Start container') {
       steps {
-        sh 'docker-compose -f /home/vagrant/project/docker-compose.yml up -d'
-        sh 'docker-compose -f /home/vagrant/project/docker-compose.yml ps'
+        sh 'cd /home/vagrant/project'
+        sh 'docker compose up -d'
+        sh 'docker compose ps'
       }
     }
   }
