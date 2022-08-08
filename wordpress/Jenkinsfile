@@ -16,7 +16,7 @@ pipeline {
       steps {
         sh '''
         cd /home/vagrant/project
-        docker compose up -d'
+        docker compose up -d
         docker compose ps
         '''
       }
