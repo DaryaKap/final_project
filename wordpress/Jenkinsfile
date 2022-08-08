@@ -14,9 +14,8 @@ pipeline {
     }
     stage('Start container') {
       steps {
-        sh 'cd /home/vagrant/project'
-        sh 'docker compose up -d --no-color --wait'
-        sh 'docker compose ps'
+        sh 'docker-compose -f /home/user/final_project/wordpress/docker-compose.yml up -d'
+        sh 'docker-compose -f /home/user/final_project/wordpress/docker-compose.yml  ps'
       }
     }
   }
