@@ -14,9 +14,11 @@ pipeline {
     }
     stage('Start container') {
       steps {
-        sh 'cd /home/vagrant/project'
-        sh 'docker compose up -d'
-        sh 'docker compose ps'
+        sh '''
+        cd /home/vagrant/project
+        docker compose up -d'
+        docker compose ps
+        '''
       }
     }
   }
