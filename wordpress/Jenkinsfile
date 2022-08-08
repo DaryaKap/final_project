@@ -14,8 +14,8 @@ pipeline {
     }
     stage('Start container') {
       steps {
-        sh 'docker-compose -f /home/user/final_project/wordpress/docker-compose.yml up -d'
-        sh 'docker-compose -f /home/user/final_project/wordpress/docker-compose.yml  ps'
+        sh 'docker-compose -f /home/vagrant/project/docker-compose.yml up -d'
+        sh 'docker-compose -f /home/vagrant/project/docker-compose.yml ps'
       }
     }
   }
