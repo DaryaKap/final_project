@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+  stages {
+    stage("verify tooling") {
+      steps {
+        sh '''
+          docker exec -i 5e44d35e334a restore_backup.sh /backup/wordpress.2022-08-09_19-04-15.sql
+        '''
+      }
+    }
+  }
+}
