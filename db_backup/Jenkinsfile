@@ -4,8 +4,7 @@ pipeline {
     stage("verify tooling") {
       steps {
         sh '''
-          docker exec -it 5e44d35e334a bash
-          ls -la
+          docker exec -it 5e44d35e334a ls -la
         '''
       }
     }
