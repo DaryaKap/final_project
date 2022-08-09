@@ -1,15 +1,11 @@
-pipeline { 
- agent { 
-    docker {  
-            image 'mysql:8.0.27' 
-   args '-u root' 
-        } 
-    } 
- stages {
-   stage ("Install packages") { 
-     steps { 
-        sh ''' 
-        ls -la 
+pipeline {
+  agent any
+  stages {
+    stage("verify tooling") {
+      steps {
+        sh '''
+          docker exec -it 5e44d35e334a bash
+          ls -la
         '''
       }
     }
