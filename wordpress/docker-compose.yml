@@ -2,11 +2,11 @@ services:
   db:
     # If you really want to use MySQL, uncomment the following line
     image: mysql:8.0.27
+    container_name: db_mysql
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - /db_data:/var/lib/mysql
       - /backup:/backup
-      - /dataa:/var/lib/mysql
     restart: always
     env_file: db.env
 
@@ -15,6 +15,7 @@ services:
       - 33060
   wordpress:
     image: wordpress:latest
+    container_name: wordpress
     volumes:
       - /wp_data:/var/www/html
     ports:
