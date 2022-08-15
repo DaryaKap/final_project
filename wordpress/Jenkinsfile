@@ -4,16 +4,16 @@ pipeline {
       stage("verify tooling") {
           steps {
               sh '''
-              docker version
-              docker info
-              docker compose version
+              cd /home/vagrant/final_project
+              git pull git@github.com:DaryaKap/final_project.git
+              ls -la
               '''
             }
         }
         stage('Start container') {
             steps {
                 sh '''
-                cd /home/vagrant/project
+                cd /home/vagrant/final_project/wordpress
                 docker compose up -d
                 docker compose ps
                 '''
